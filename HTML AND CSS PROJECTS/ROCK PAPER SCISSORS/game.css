@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: content;
+    align-items: center;
+    overflow: hidden;
+}
+
+.selections {
+    margin-top: 10vh;
+}
+button {
+    font-size: 10vw;
+    background: none;
+    border: none;
+    transition: 200ms transform ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background: rgba(128, 128, 128, 0.285);
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vh;
+    gap: 15vw;
+    font-size: 3vw;
+}
+
+.score {
+    font-size: 2vw;
+    color: gray;
+}
+
+.resultsSection{
+    font-size: 5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 20vw;
+}
+
+
+.winner {
+    font-size: 6vw;
+    opacity: 100%;
+}
+
+
+.loser {
+    opacity: 50%;
+}
+
+.reset{
+    position: absolute;
+    inset-block-end:0;
+    margin-bottom: 8vh;
+    font-size: 5vw;
+}
+
+.overlay {
+    position: absolute;
+    margin: 0;
+    margin-top:0;
+    width: 150vw;
+    height: 100vh;
+    margin: 0;
+    background:rgba(0, 0, 0, 0.852);
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10vh;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theWinner {
+    font-size: 10vw;
+}
+
+
+.try {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5vw;
+}
+
+.overlay.appear{
+    opacity: 1;
+    pointer-events: all;
+}

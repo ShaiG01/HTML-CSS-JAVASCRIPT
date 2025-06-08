@@ -1,0 +1,72 @@
+*::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        
+    }
+
+
+   
+    :root {
+        --tooltip-color: rgb(0, 0, 0);
+        --arrowSize: 30px;
+        --translate-y: 0;
+
+    }
+    
+    div {
+      width: 100px;
+      height: 100px;
+      background-image: url("http://www.homelesstohousecats.com/wp-content/uploads/2014/10/cat-401124_1920.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%; 
+      position: relative;}
+
+
+    .avatar::before, .avatar::after {
+        --scale: 0;
+        position: absolute;
+        top: -3em;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+        transform-origin: bottom center;
+        transition: 200ms transform ease-in-out;
+    }
+
+    .avatar::before {
+        --translateY: calc(-100% - var(--arrowSize));
+        content: attr(data-tooltip);
+        background: var(--tooltip-color);
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        width: max-content;
+        max-width: 100%;
+        padding: 6px;
+        border-radius: 2px;
+
+    }
+
+    .avatar:hover::before, .avatar:hover::after {
+        --scale: 1;
+    }
+
+    .avatar:hover {
+        cursor: pointer;
+    }
+
+  .avatar::after {
+    content: '';
+    border: var(--arrowSize) solid transparent;
+    border-top-color: var(--tooltip-color);
+    --translate-y: calc(1.3 * var(--arrowSize));
+    transform-origin: top center;
+  }

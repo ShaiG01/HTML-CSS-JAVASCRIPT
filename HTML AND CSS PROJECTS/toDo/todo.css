@@ -1,0 +1,418 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: rgb(255, 255, 255);
+    --bg: rgb(255, 216, 143);
+    --accent: linear-gradient(to right, orange, #dc7221);
+    --font-colorB: rgb(255, 171, 15);
+    --font-colorA: white;
+    --glowColor:  rgb(255, 255, 255);
+    --click: rgb(221, 223, 168); 
+     --transitionDelay: 1s;
+     --checkColor: rgb(252, 172, 0);
+     --scale: 0;
+     --container: rgba(255, 122, 5, 0.384);
+    }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow:hidden;
+    background: var(--background-color);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: scaleIN 2s ease-out forwards;
+    transition: opacity 1s ease-out forwards;
+     transition: opacity, fill, var(--transitionDelay)
+}
+
+body.dark {
+    --background-color: rgb(25, 32, 58);
+    --bg: rgb(38, 54, 99);
+    --accent: linear-gradient(to right, rgb(68, 98, 146), #7489a5);
+    --font-colorB: rgb(252, 174, 65);
+    --font-colorA: rgb(23, 23, 106);
+    --glowColor:  rgb(255, 255, 255);
+    --click: rgb(183, 205, 255); 
+     --container: rgb(0, 11, 60);
+     transition: opacity, fill, var(--transitionDelay)
+
+}
+ 
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: visible;
+    pointer-events: none;
+    transform: rotate(var(--rotation));
+    transition: transform 1s ease-in-out;
+}
+
+.dark .container {
+    transform: rotate(var(--rotation));
+}
+
+
+.headingA{
+  font-family: "Oleo Script", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 8vw;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 5px;
+  color: var(--font-colorB);
+
+
+}
+
+button{
+    padding: 1vw;
+    font-size: 1vw;
+    background: var(--accent);
+    border-radius: 20px;
+    border: none;
+    color: var(--font-colorA);
+    font-size: 2vw;
+    position: relative;
+    transition: transform 200ms ease-in-out;
+  
+}
+
+
+.create {
+    animation: rotate ease-in-out 2s;
+  animation-delay: 2s;
+  
+}
+
+
+
+
+
+
+.menu {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50vw;
+    height: 30vw;
+    padding: 5vw;
+    justify-self: center;
+    font-size: 3vw;
+    gap: 2vh;
+    background: var(--bg);
+    border-radius: 20px;
+    color: var(--font-colorB);
+    position: relative;
+     margin-top: 2vw;
+}
+
+
+.menu::after{
+    content: '';
+    position: absolute;
+    background: var(--accent);
+    width: 55vw;
+    height: 32vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10vw;
+    border-radius: 20px;
+    z-index: -1;
+
+}
+
+
+
+button:hover{
+    transform: scale(1.1);
+    --accent: linear-gradient(to right, rgb(255, 196, 86), #ff9a4c);
+    cursor: pointer;
+}
+
+svg {
+    width: 8vw;
+    height: 8vw;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.toggle {
+  position: absolute;
+  left: 43%;
+  top: 0;
+  background: var(--background-color);
+  color: var(--font-colorB)
+}
+
+.toggle::before{
+  content: '';
+  position: absolute;
+  background: var(--accent);
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  z-index: -1;
+}
+.sun {
+    inset-block-start:50%;
+    inset-inline-start: 0;
+    fill: var(--font-colorB);
+    border-radius: 50%;
+    background: var(--bg);
+    position: absolute;
+    transform: scale(1.2);
+}
+
+.moon:hover {
+    background: var(--click);
+    transform: scale(1.2);
+}
+
+.moon {
+    inset-block-start:50%;
+    inset-inline-end: 0;
+    fill: var(--font-colorB);
+    border-radius:50%;
+    transition: 200ms transform ease-in-out;
+}
+
+
+.dark .sun {
+    background: none;
+    transition: transform 200ms ease-in-out;
+}
+
+.dark .sun:hover {
+    background: var(--click);
+    transform: scale(1.2);
+}
+
+
+.dark .moon {
+    background: var(--bg);
+    transform: scale(1.2) rotate(180deg);
+}
+
+
+.newTask {
+  width: 30vw;
+  height: 5vw;
+  background: var(--accent);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw;
+  align-items: center;
+  padding: 10px;
+  color: var(--font-colorA);
+}
+
+.check {
+  accent-color: var(--checkColor);
+  width: 3vw;
+  height: 3vw;
+}
+
+.task {
+  font-size: 2vw;
+  color: var(--font-colorA)
+}
+
+.headingC {
+  font-family: "Oleo Script", system-ui;
+  color: var(--font-colorB);
+  font-size: 5vw;
+} 
+
+.taskContainer {
+  background: var(--container);
+  width: 50%;
+  height: 90%;
+  align-self: flex-start;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 1vw;
+  overflow-y: scroll;
+}
+
+.addNew{
+  position: absolute;
+  inset-block-start: 1vw;
+  inset-inline-end: 1vw;
+}
+
+.overlay {
+  width: 105%;
+  height: 105%;
+  position: absolute;
+  top:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.332);
+  display: none;
+}
+
+.overlay.hide{
+  display: block;
+  pointer-events: none;
+}
+
+.overlayInput {
+  background: var(--background-color);
+  border: 2px solid;
+  border-color: var(--font-colorB);
+  width: 50vw;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vw;
+  padding: 2vw;
+  position: absolute;
+  border-radius: 20px;
+  inset-block-start: 25%;
+  inset-inline-start: 25%;
+  transform: scale(var(--scale));
+  transition: transform 200ms ease-out;
+  gap: 1vw;
+}
+
+.x {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 5vw;
+  color: var(--font-colorB)
+}
+
+.x:hover {
+  cursor: pointer;
+}
+.inputTask {
+  color: var(--font-colorB);
+}
+
+.taskInput {
+  border: 2px solid;
+  border-color: var(--font-colorB);
+  padding: 1vw;
+  color: var(--font-colorB);
+}
+
+.firstPage{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+   transition: opacity, fill, var(--transitionDelay)
+}
+.nextPage {
+  width: 100%;
+  height: 100%;
+}
+
+.inactive {
+  display: none;
+}
+
+.remove {
+  position: absolute;
+  inset-block-end: 1vw;
+  inset-inline-end: 1vw;
+}
+
+.containerTask{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+@media (max-width: 414px) {
+  .headingA {
+    font-size: 6vh;
+    margin-top: 2vh;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .question {
+    font-size: 2.4vh;
+    align-items: center;
+  }
+
+  .menu {
+    width: 40vh;
+    height: 20vh;
+  }
+
+  .menu::after {
+    width: 43vh;
+    height: 23vh;
+  }
+
+  button{
+    font-size: 1.3vh;
+  }
+
+   .sun {
+    position: absolute;
+    top: 10vh;
+    left: 45vw;
+    width: 10vh;
+    height: 10vh;
+  }
+
+    .moon {
+   position: absolute;
+    inset-inline-end: unset;
+    left: 45vw;
+    bottom: 5vh; /* Push it close to the bottom */
+    top: unset; /* Remove conflicting top */
+    width: 10vh;
+    height: 10vh;
+  }
+
+
+}
+
+
+
+@keyframes scaleIN {
+    0% {
+        opacity:0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes rotate {
+30% { transform: scale(1.2); }
+40%, 60% { transform: rotate(-5deg) scale(1.2); }
+50% { transform: rotate(5deg) scale(1.2); }
+70% { transform: rotate(0deg) scale(1.2); }
+100% { transform: scale(1); }
+}

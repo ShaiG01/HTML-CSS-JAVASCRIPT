@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Tester</title>
+    <script src="pass.js" defer></script>
+
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+
+        :root{
+            --strength: 0;
+        }
+
+        body{
+            background: rgb(71, 0, 71);
+            color: rgb(202, 105, 228);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2vh;
+        }
+
+        .strengthMeter{
+            width: 50vw;
+            height: 9vw;
+            border: 5px solid transparent;
+            border-color: rgb(202, 105, 228);
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .strengthMeter::before{
+            content: '';
+            height: 100%;
+            background: rgb(161, 58, 142);
+            width: calc(1% * var(--strength));
+            position: absolute;
+            border-radius: 10px;
+            transition: width 200ms ease-in-out;
+        }
+
+        h1{ 
+            font-size: 5vw;
+        }
+
+        input{
+            width: 50vw;
+            height: 5vh;
+            margin-top: 5vh;
+            border-radius: 10px;
+            background: rgb(94, 10, 79);
+            border: 2px solid rgb(202, 105, 228);
+            color:rgb(224, 105, 228);
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .reasons{
+                text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Strength Tester</h1>
+
+    <div class="strengthMeter"></div>
+    <input type="text" auto-focus aria-labelledby="password">
+    <div class="reasons"></div>
+</body>
+</html>

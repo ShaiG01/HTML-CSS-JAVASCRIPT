@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+:root {--scale: 0}
+
+.modal {
+    width: 60vw;
+    height: 30vh;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    transform: scale(var(--scale));
+    transition: transform 200ms ease-in-out;
+    z-index: 1;
+}
+
+.openModal {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+}
+
+.headerModal {
+    display: flex;
+    justify-content: space-between;
+    border: 2px black;
+    position: relative;
+
+}
+
+.headerModal::after {
+    content:'';
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px black;
+    position: absolute;
+    top: 80%
+}
+
+
+
+.x {
+    height: 20px;
+    width: 20px;
+    background: none;
+    border-radius: 50%;
+    background: rgb(144, 144, 144);
+    border: none;
+    color: white;
+    
+}
+
+button{
+    cursor: pointer;
+}
+
+.overlay {
+    width: 150vw;
+    height: 150vh;
+    position: absolute;
+    z-index:0;
+    background: rgba(109, 109, 109, 0.834);
+    margin: 0;
+    transform: scale(var(--scale));
+    pointer-events: none;
+    
+}
+
+.overlay.active {
+    pointer-events: all;
+}

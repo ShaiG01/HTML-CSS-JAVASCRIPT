@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 5vw;
+}
+
+.hide {
+    display: none;
+}
+
+.bird{
+    --bird-size: 100px;
+    --bird-top: -1000;
+    position: absolute;
+    width: var(--bird-size);
+    height: var(--bird-size);
+    left: var(--bird-size);
+    top: calc(var(--bird-top) * 1px);
+    background-image: url('birdie.png');
+    background-position: center;
+    background-size: cover;
+
+}

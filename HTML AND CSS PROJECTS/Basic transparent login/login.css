@@ -1,0 +1,121 @@
+body {
+    background-image: url("background_image.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+:root {
+    --primary-Text-Color: white;
+}
+
+.loginContainer {
+
+    background-color: rgba(15, 75, 75, 0.4);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    min-width: 280px;
+    padding: 30px;
+    box-shadow: 0px 0px 4px 4px hsla(177, 100%, 51%, 0.334);
+    font-size: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+input:valid, input:invalid {
+    border: 2px solid transparent;
+}
+
+input:valid {
+    border-color: hsl(120, 41.10%, 56.10%);
+}
+
+input:invalid {
+    border-color: rgb(48, 162, 200);
+
+}
+
+
+.welcHead {
+    text-align: center;
+    color: var(--primary-Text-Color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 7px;
+    width: 100%;
+    position: relative;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgb(55, 123, 78, 0.4);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 200ms transform ease-in-out;
+
+}
+
+button:hover {
+    color: rgb(175, 255, 200, 0.4);
+    background: hsla(139, 65%, 47%, 0.4);
+    transform: scale(1.05)
+
+}
+
+#msg-e {
+    color: rgb(138, 225, 138);
+    font-size: 10px;
+}
+
+#msg-p {
+    color: rgb(245, 120, 120);
+    font-size: 10px;
+}
+/* Optional: for small screens */
+@media (max-width: 400px) {
+    .loginContainer {
+        padding: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+

@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box
+}
+
+:root {
+  --hue: 300;
+  --saturation: 50%;
+  --background-color: hsl(var(--hue), var(--saturation), 20%);
+  --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.score{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    font-size: 5vw;
+    position: relative;
+    color: var(--foreground-color)
+}
+
+.yourScore, .computerScore {
+    animation: popping 2s ease-in-out infinite;
+}
+.score::after {
+    content: '';
+    width: 3px;
+    height: 6vw;
+    position: absolute;
+    inset-inline-start: 50%;
+    background-color: var(--foreground-color);
+}
+
+
+
+.paddleLeft {
+    position: absolute;
+    inset-inline-start: 0;
+    width: .5vw;
+    height: 15vh;
+    background: white;
+
+}
+
+.paddleRight {
+    position: absolute;
+    inset-inline-end: 0;
+    width: .5vw;
+    height: 15vh;
+
+}
+
+.paddleRight, .paddleLeft{
+  --position: 50;
+  transform: translateY(-50%);
+  top: calc(var(--position) * 1vh);
+  background: var(--foreground-color)
+}
+
+.ball {
+  --x: 50;
+  --y: 50;
+
+  left: calc(var(--y) * 1vw);
+  top: calc(var(--x) * 1vh);
+
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background: var(--foreground-color);
+
+}

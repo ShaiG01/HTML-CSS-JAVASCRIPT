@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login_Form</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <div class="loginContainer" id="loginContainer">
+            <div class="welcHead" id="welcHead">
+                <h1 id="welcome">Welcome</h1>
+            </div>
+            <div class="form">
+            <form>
+            <div class="input-group success">
+                <label for="email">Email</label>
+               <input name="email" id="name" type="text" valid required>
+            </div>
+            <div class="input-group error">
+                <label for="password">Password</label>
+                <input name="password" id="password" type="password" required>
+                 <p class="passwordError">Enter password</p>
+            </div>
+            <div id="loginBtn">
+                <button disabled type="submit">Login</button>
+            </div>
+            </form>
+            </div>
+        </div>
+        <script src="login.js" defer></script>
+    </body>
+</html>

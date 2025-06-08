@@ -1,0 +1,177 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #641BFF;
+  --heading-font-family: 'Poppins', sans-serif;
+  --body-font-family: times new roman;
+}
+
+body {
+  margin: 0;
+  background-color: #F8F9FB;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  font-family: var(--body-font-family);
+}
+
+img {
+    width: 15px;
+
+}
+
+.priceSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-size: 2vw 2vh;
+}
+
+.professional hr {
+    margin-top: 23px;
+}
+
+hr{
+  border: -0.2px solid #606060;
+}
+
+
+
+.basic {
+    background: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.381);
+    padding: 10px;
+    width: 15vw;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 200ms ease-in-out;
+
+}
+
+
+
+.basic .dollar {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.5rem;
+}
+
+.professional .dollar {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.5rem;
+
+}
+
+.Enterprise .dollar {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.5rem;
+}
+
+.price {
+     position: relative;
+     display: inline-block;
+}
+
+
+
+.number {
+    font-size: 50px;
+
+}
+
+.professional {
+     background: var(--accent-color);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.381);
+    padding: 10px;
+    width: 17vw;
+    max-height: auto;
+    border-radius: 10px;
+    color: white;
+    transition: transform 200ms ease-in-out;
+    z-index: 1;
+}
+
+.Enterprise {
+    background: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.381);
+    padding: 10px;
+     width: 15vw;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 200ms ease-in-out;
+
+}
+
+.plan {
+    margin-top: 5px;
+}
+.inactive {
+    text-decoration-line: line-through;
+    color: gray
+}
+
+.feature {
+    margin-top: 10px;
+   
+}
+
+
+.buttonA {
+
+    padding-right: 4vw;
+     padding-left: 4vw;
+     padding-top: 1vh;
+     padding-bottom: 1vh;
+     border: none;
+     border-radius: 5px;
+     background: var(--accent-color);
+     color: white;
+}
+
+
+
+.buttonB {
+   
+    padding-right: 4vw;
+     padding-left: 4vw;
+     padding-top: 1vh;
+     padding-bottom: 1vh;
+      border: none;
+     border-radius: 5px;
+     color: var(--accent-color);
+}
+
+button {
+    margin-top: 40px;
+
+}
+
+.basic:hover {
+    transform: scale(1.2);
+}
+
+
+.professional:hover {
+    transform: scale(1.2);
+}
+
+.Enterprise:hover {
+    transform: scale(1.2);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.popular {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
