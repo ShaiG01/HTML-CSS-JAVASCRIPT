@@ -77,7 +77,7 @@ function declareWinner(winnerName) {
   theWinner.innerText = winnerName + ' is the winner';
 }
 
-// ✅ Reset functionality
+
 resetBtn.addEventListener('click', () => {
   yourScoreSpan.innerText = 0;
   computerScoreSpan.innerText = 0;
@@ -86,7 +86,7 @@ resetBtn.addEventListener('click', () => {
   overlay.classList.remove('appear');
 });
 
-// ✅ Try again reload
+
 tryAgain.addEventListener('click', () => {
   location.reload();
 });
