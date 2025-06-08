@@ -20,7 +20,7 @@ toggle.addEventListener('click', toggleBtn)
 
 window.addEventListener("DOMContentLoaded", () => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    savedTasks.forEach(task => appendNewTask(task, false)); // false = don't re-save
+    savedTasks.forEach(task => appendNewTask(task, false));
 });
 
 function toggleBtn() {
@@ -112,5 +112,5 @@ function clear(container){
     while(container.firstChild){
         container.removeChild(container.firstChild)
     }
-    localStorage.removeItem("tasks"); // ✅ clear saved tasks too
+    localStorage.removeItem("tasks"); 
 }
